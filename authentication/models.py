@@ -9,5 +9,3 @@ class User(AbstractUser):
     is_admin = models.BooleanField(default=False)
     phone_no = models.IntegerField()
     room = models.ForeignKey('hostel.Hostel', on_delete=models.CASCADE)
-    
-
