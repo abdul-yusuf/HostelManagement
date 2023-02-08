@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'managers',
     'authentication',
     'hostel',
+    'complaints',
 ]
 
 MIDDLEWARE = [
