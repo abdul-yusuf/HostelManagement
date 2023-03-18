@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title>Add User</title>
+        <link rel= "stylesheet" href="add.css"/>
+        <script>
+            function showClasses() {
+                var selectedOption = document.getElementById("Resident-type").value;
+                if (selectedOption == "student") {
+                    document.getElementById("studentDD").style.display = "block";
+                } else {
+                    document.getElementById("studentDD").style.display = "none";
+                }
+            }
+        </script>
+        <style>
+            input{
+                height: 50px;
+                width: 100%;
+                border-radius: 7px;
+                padding: 10px;
+                font-size: 16px;
+                background-color: rgb(240, 240, 240);
+                border: 0;
+                margin: 10 0;
+            }
+            body {
+                font-family: Arial, sans-serif;
+            }
+            select, button {
+                display: inline;
+                width: 100%;
+                margin: 10px 0; 
+                height: 50px;
+                border-radius: 7px;
+                font-size: 16px;
+                border: 0;
+            }
+
+            select{
+                padding: 10px;
+                background-color: rgb(240, 240, 240);
+            }
+
+            button[type="submit"] {
+                background-color: rgb(145, 192, 91);
+                color: white;
+                cursor: pointer;
+            }
+            .container {
+                margin: 0 auto;
+                padding: 20px;
+                max-width: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            form, #studentDD>label {
+                display:flex;
+                flex-direction: column;
+                justify-content:space-between;
+            }
+            #studentDD {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form action=" /registration" method="POST">
+
+                <label for="firstname">First Name</label><br>
+                <input type="text" name="firstname"><br><br><br>
+
+                <label for="lastname">Last Name</label><br>
+                <input type="text" name="lastname"><br><br><br>
+
+                <label for="phoneno">Phone Number</label><br>
+                <input type="text" name="phoneno"><br><br><br>
+                
+                <label for="regno">Reg No/Staff ID</label><br>
+                <input type="text" name="regno"><br><br><br>
+
+
+                <!-- <input type="search" name="" id=""> -->
+                <label for="resident-type">Resident Type:</label><br>
+                <select id="Resident-type" onchange="showClasses()">
+                    <option value="">--Select--</option>
+                    <option value="student">Student</option>
+                    <option value="staff">Security</option>
+                    <option value="staff">Electrician</option>
+                    <option value="staff">Plumber</option>
+                    <option value="staff">Others</option>
+                </select><br><br><br>
+
+                <div id="studentDD" style="display:none;">
+                    <label for="block">Block Number</label><br>
+                    <select name="Block" id="block">
+                        <option value="">--Select--</option>
+                        <option value="BlockA">Block A</option>
+                        <option value="BlockB">Block B</option>
+                        <option value="Blockc">Block C</option>
+                        <option value="BlockD">Block D</option>
+                    </select><br><br><br>
+
+                    <label for="room">Room Number</label><br>
+                    <select name="Room" id="room">
+                        <option value="">--Select--</option>
+                        <option value="Room1">Room 1</option>
+                        <option value="Room2">Room 2</option>
+                        <option value="Room3">Room 3</option>
+                        <option value="Room4">Room 4</option>
+                        <option value="Room5">Room 5</option>
+                        <option value="Room6">Room 6</option>
+                        <option value="Room7">Room 7</option>
+                        <option value="Room8">Room 8</option>
+                        <option value="Room9">Room 9</option>
+                        <option value="Room10">Room 10</option>
+                    </select><br><br><br>
+
+                </div>           
+                
+                <!-- <input type="image" src="file.img" alt=""> -->
+                <label for="img">Upload Image</label><br>
+                <input type="file" name="img"><br><br><br>
+                <button type="submit">ADD</button>
+            </form>
+
+        </div>
+    </body>
+</html>

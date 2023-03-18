@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <title>Add User</title>
+        <link rel= "stylesheet" href="search.css"/> 
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            select {
+                display: inline;
+                width: 130px;
+                margin: 10 0 10 10; 
+                height: 50px;
+                border-radius: 7px;
+                font-size: 16px;
+                border: 0;
+                padding: 10px;
+                background-color: rgb(240, 240, 240);
+            }
+
+            input {
+                height: 50px;
+                width: 300px;
+                border-radius: 7px;
+                font-size: 16px;
+                background-color: rgb(240, 240, 240);
+                border: 0;
+                padding: 10px;
+                margin: 10 0;
+            }
+
+            img {
+                border-radius: 5px;
+                width: 100px;
+                height: 100px;
+                border-radius: 50px;
+            }
+
+            button {
+                background-color: rgb(145, 192, 91);
+                color: white;
+                cursor: pointer;
+                border-radius: 7px;
+                font-size: 16px;
+                border: 0;
+                width: 80px;
+                height: 40px;
+                margin: 0 5px;
+            }
+
+            .user_details {
+                display: inline;
+            }
+
+            .card {
+                display:flex;
+                align-items: center;
+                justify-content:space-between;
+                padding: 10px;
+                border: 0;
+                border-radius: 15px;
+                background-color: rgb(240, 240, 240);
+                margin: 10px 0;
+            }
+
+            .search_area {
+                display: flex;
+                align-items: center;
+                justify-content:space-between;
+                margin: 10px 0;
+            }
+
+            .container {
+                margin: 0 auto;
+                padding: 20px;
+                max-width: 80%;
+            }
+
+            .user_detail {
+                margin-left: 30px;
+            }
+
+            .img-name {
+                display: inline-flex;
+            }
+
+            .add-user-btn {
+                position: absolute;
+                bottom: 50px;
+                left: calc(80%);
+                background-color:rgb(145, 192, 91);
+                color: white;
+                border: 0;
+                border-radius: 7px;
+                cursor: pointer;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="search_area">
+                <div>
+                    <label for="searchbar">Search</label>
+                    <input type="search" name="searchbar">
+                </div>
+                <div>
+                    <label for="sort">Sort</label>
+                    <select name="sort" id="sort">
+                        <option value="name">Name</option>
+                        <option value="date">Date</option>
+                        <option value="Room">Room</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="type">Type</label>
+                    <select name="sort" id="sort">
+                        <option value="student">Student</option>
+                        <option value="electrician">Electrician</option>
+                        <option value="security">Security</option>
+                        <option value="plumber">Plumber</option>
+                    </select> 
+                </div>
+            </div>
+            <div class="user-list">
+                <div class="card">
+                    <div class="img-name">
+                        <div class="user_img">
+                            <img src="add.jpg" alt="user photo">
+                        </div>
+                        <div class="user_detail">
+                            <h2>Baffa Abba</h2>
+                            <p>Class A</p>
+                        </div>
+                    </div>
+
+                    <div class="user_btns">
+                        <button>Edit</button>
+                        <button>Remove</button>
+                    </div>
+                </div>
+            </div>
+            <button class="add-user-btn">Add User</button>
+
+        </div>
+    </body>
+</html>
