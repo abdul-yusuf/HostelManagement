@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <link rel= "stylesheet" href="login.css"/> 
+        <style>
+            .container{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                height: 100;
+            }
+
+            .container div{
+                display:flex;
+                width: 50%;
+                height: 50%;  
+                flex-direction: row;
+                justify-content: center;
+
+            }
+
+            .picture>img{
+                flex-wrap: wrap;
+                display:flex;
+                align-items: center;
+                width: 50%;
+                margin: 5%;
+                width: 50;
+                justify-content: center;
+                flex-direction: column;
+                align-content: stretch;
+            }
+
+            h2 {
+                font: "MS Shell Dlg 2";
+                margin: 5%;
+                width: auto;
+
+            }
+            h4{
+                color: rgb(110, 110, 110);
+                margin: 5%;
+
+            }
+
+            input {
+                background-color: rgb(240, 240, 240);
+                font:"MS Shell Dlg 2";
+                padding-left: 10px;
+                margin: 5%;
+                border-radius: 7px;
+                border: 0;
+                height: 35px;
+                width: 80%;
+                /* text-transform: lowercase; */
+            }
+
+            input:hover {
+                background-color: rgb(235, 235, 235);
+            }
+
+            input:focus {
+                background:rgb(240, 240, 240);
+                border:rgb(110, 110, 110) 1px solid;
+
+            }
+            form>label {
+                font: "MS Shell Dlg 2";
+                color: rgb(110, 110, 110);
+                margin: 5%;
+                border-top: 0;
+                border-bottom: 0;
+            }
+            form>a {
+                text-align: right;
+                color: rgb(145, 192, 91);
+                margin: 5%;
+            }
+
+            form>button {
+                width: 80%;
+                height: 35px;
+                background-color:rgb(145, 192, 91);
+                color: rgb(255, 255, 255);
+                border-radius: 7px;
+                border: none;
+                margin: 5%;
+            }
+            form>button:hover {
+                background-color:rgb(165, 219, 103);
+            }
+            @media (max-width: 500px) {
+                .container{
+                    flex-direction:column;
+                }
+
+                .container div{
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <div class="container">
+            <div class="picture" >
+                <img src="add.jpg"  alt="This is a picture">
+            </div>
+            <div class="login_form">
+                
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    
+                    <h2>LOGIN TO YOUR ACCOUNT</h2>
+                    <h4>Login now</h4><br>
+                    
+                    <label for="username">Email Address</label><br>
+                    <input type="text" name="username"><br><br><br>
+
+                    <label for="password">Password</label><br>
+                    <input id="pass" type="password" name="password"><br>
+
+                    <a id="forgot" href="reset_pass.html">Forgot Password?</a><br>
+                    <button type="submit">Sign In</button><br>
+                    
+                
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
