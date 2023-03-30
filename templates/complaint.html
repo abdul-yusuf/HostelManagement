@@ -1,99 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel= "stylesheet" href="complaint.css"/>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    form {
-      box-sizing: border-box;
-      margin: 10px auto;
-      text-align: left;
-      height: 50%;
-      float: right;
-      float: inline-end;
-    }
-    #msg {
-      float: left;
-    }
-    label, textarea {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-    }  
-    select, button{
-      display: inline;
-      width: 190px;
-      margin: 10px 0;  
-    }
-    select {
-      height: 50px;
-      border-radius: 7px;
-      padding: 10px;
-      font-size: 16px;
-      background-color: rgb(240, 240, 240);
-      border: 0;
-    }
-    textarea {
-      background-color: rgb(240, 240, 240);
-      border-radius: 7px;
-      border: 0;
-      height: 200px;
-      padding: 10px;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
-    button[type="submit"] {
-      background-color: rgb(145, 192, 91);
-      color: white;
-      height: 50px;
-      font-size: 16px;
-      border: none;
-      border-radius: 7px;
-      cursor: pointer;
-    }
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel= "stylesheet" href="complaint.css"/>
+        <style>
+            body {
+              font-family: Arial, sans-serif;
+            }
+            form {
+              box-sizing: border-box;
+              margin: 10px auto;
+              text-align: left;
+              height: 50%;
+              float: right;
+              float: inline-end;
+            }
+            #msg {
+              float: left;
+            }
+            label, textarea {
+              display: block;
+              width: 100%;
+              margin: 10px 0;
+            }  
+            select, button{
+              display: inline;
+              width: 190px;
+              margin: 10px 0;  
+            }
+            select {
+              height: 50px;
+              border-radius: 7px;
+              padding: 10px;
+              font-size: 16px;
+              background-color: rgb(240, 240, 240);
+              border: 0;
+            }
+            textarea {
+              background-color: rgb(240, 240, 240);
+              border-radius: 7px;
+              border: 0;
+              height: 200px;
+              padding: 10px;
+              font-size: 16px;
+              box-sizing: border-box;
+            }
+            button[type="submit"] {
+              background-color: rgb(145, 192, 91);
+              color: white;
+              height: 50px;
+              font-size: 16px;
+              border: none;
+              border-radius: 7px;
+              cursor: pointer;
+            }
 
-    @media only screen and (max-width: 720px) {
-      form {
-        width: 100%;
-      }
-    }
+            @media only screen and (max-width: 720px) {
+              form {
+                width: 100%;
+              }
+            }
 
-    .container{
-      padding: 0px 20px;
-    }
-  </style> 
+            .container{
+              padding: 0px 20px;
+            }
+        </style> 
 
 
     <title>Hall-Admin Message</title>
-  </head>
-  <body>
+    </head>
+    <body>
 
-    <div class="container">
-      <form action=" /registration" method="POST">
-        <h1 style="text-align: center;">Send a Message</h1>
-        <label for="message">Message:</label>
-        <textarea id="message"></textarea>
-        <label for="receiver">Select Receiver:</label>
-        <select id="receiver">
-          <option value="">--Select--</option>
-          <option value="receiver1">Student</option>
-          <option value="receiver2">Security</option>
-          <option value="receiver3">Electrician</option>
-          <option value="receiver4">Plumber</option>
-        </select>
-        <button type="submit">Send</button>
-      </form>
-      <div id="msg">
-        <hr>
-        <h1 style="text-align: center;">Received Messages</h1>
-        <ul id="messages" style="list-style: none; padding: 0; margin: 0;"></ul>
+      <div class="container">
+        <form action=" /registration" method="POST">
+          <h1 style="text-align: center;">Send a Message</h1>
+          <label for="message">Message:</label>
+          <textarea id="message"></textarea>
+          <label for="receiver">Select Receiver:</label>
+          <select id="receiver">
+            <option value="">--Select--</option>
+            <option value="receiver1">Student</option>
+            <option value="receiver2">Security</option>
+            <option value="receiver3">Electrician</option>
+            <option value="receiver4">Plumber</option>
+          </select>
+          <button type="submit">Send</button>
+        </form>
+        <div id="msg">
+          <hr>
+          <h1 style="text-align: center;">Received Messages</h1>
+          <ul id="messages" style="list-style: none; padding: 0; margin: 0;"></ul>
+        </div>
+        
       </div>
-      
-    </div>
-  </body>
+    </body>
 </html>
