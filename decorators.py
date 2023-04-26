@@ -1,7 +1,8 @@
 from functools import wraps
 from django.shortcuts import redirect
 
-def is_login(func):
+
+def is_logged_in(func):
     @wraps(func)
     def wrap(request, *args, **kwargs):
         user = request.user
@@ -14,29 +15,48 @@ def is_login(func):
             else:
                 print('user is admin')
         else:
-            func(request,*args, **kwargs)
+            func(request, *args, **kwargs)
+
     return wrap
+
 
 def admin_only(func):
     @wraps(func)
-    def wrap(request,*args, **kwargs):
+    def wrap(request, *args, **kwargs):
         user = request.user
-
+        print(args, kwargs)
         if user.is_admin:
             print('access granted')
+            func(request, *args, **kwargs)
+
         else:
-            print(f'{user.name} you have no access to this page')
+            print(f'{user} you have no access to this page')
+            func(request, *args, **kwargs)
 
     return wrap
 
-def workers_only(func):
+
+# def workers_only(func):
+#     @wraps(func)
+#     def wrap(request,*args, **kwargs):
+#         user = request.user
+#
+#         if user.is_worker:
+#             print('access granted')
+#         else:
+#             print(f'{user.name} you have no access to this page')
+#
+#     return wrap
+
+def staff_only(func):
     @wraps(func)
-    def wrap(request,*args, **kwargs):
+    def wrap(request, *args, **kwargs):
         user = request.user
 
-        if user.is_worker:
+        if user.is_admin or user.is_worker:
             print('access granted')
         else:
-            print(f'{user.name} you have no access to this page')
+            print(f'{user} you have no access to this page')
+            func(request, *args, **kwargs)
 
     return wrap

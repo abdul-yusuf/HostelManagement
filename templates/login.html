@@ -105,22 +105,32 @@
 
     <body>
         <div class="container">
+
+              {% for message in messages %}
+
+<!--                    <div class="alert alert-success">-->
+<!--                        <a class="close" href="#" data-dismiss="alert">×</a>-->
+<!--                           {{ message }}-->
+<!--                    </div>-->
+                    <p>{{message}}</p>
+                {% endfor %}
+
             <div class="picture" >
                 <img src="add.jpg"  alt="This is a picture">
             </div>
             <div class="login_form">
                 
-                <form action="" method="POST">
+                <form action="" method="post">
                     {% csrf_token %}
                     
                     <h2>LOGIN TO YOUR ACCOUNT</h2>
                     <h4>Login now</h4><br>
                     
                     <label for="username">Email Address</label><br>
-                    <input type="text" name="username"><br><br><br>
+                    <input type="text" name="username" id="username"><br><br><br>
 
                     <label for="password">Password</label><br>
-                    <input id="pass" type="password" name="password"><br>
+                    <input id="password" type="password" name="password"><br>
 
                     <a id="forgot" href="reset_pass.html">Forgot Password?</a><br>
                     <button type="submit">Sign In</button><br>

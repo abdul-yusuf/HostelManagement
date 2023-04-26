@@ -69,22 +69,28 @@
   </style> 
 
 
-    <title>Hall-Admin Message</title>
+    <title>{{page_name}}-List</title>
   </head>
   <body>
 
+    {% for message in messages %}
+      <p>{{message}}</p>
+    {% endfor %}
+
     <div class="container">
-      <form action=" /registration" method="POST">
+      <form action="/report/" method="post">
+        {% csrf_token %}
         <h1 style="text-align: center;">Send a Message</h1>
-        <label for="message">Message:</label>
-        <textarea id="message"></textarea>
-        <label for="receiver">Select Receiver:</label>
-        <select id="receiver">
+        <label for="message" >Message:</label>
+        <textarea name="discription" id="message"></textarea>
+        <input type="text" name="location" id="massage_type" placeholder="Location">
+        <label for="receiver">Select Issue Type:</label>
+        <select id="receiver" name="type">
           <option value="">--Select--</option>
-          <option value="receiver1">Student</option>
-          <option value="receiver2">Security</option>
-          <option value="receiver3">Electrician</option>
-          <option value="receiver4">Plumber</option>
+          <option value="S">Security</option>
+          <option value="E">Electrical</option>
+          <option value="P">Plumber</option>
+          <option value="M">Maintainace</option>
         </select>
         <button type="submit">Send</button>
       </form>
@@ -92,6 +98,26 @@
         <hr>
         <h1 style="text-align: center;">Received Messages</h1>
         <ul id="messages" style="list-style: none; padding: 0; margin: 0;"></ul>
+
+        {% for report in reports %}
+<!--          <p>Id: {{report.id}}</p>-->
+          <p>User: {{report.user}}</p>
+          <p>Message: {{report.massage}}</p>
+          <p>Report Field: {{report.type}}</p>
+          <p>Date: {{report.date}}</p>
+          {% if report.is_closed %}
+            <p>Status: Report Closed</p>
+          {% else %}
+            <p>Status: Report Open</p>
+            {% if user.is_staff %}
+              <button><a href="/close_report/{{report.id}}">CLOSE REPORT</a></button>
+            {% else %}
+              <p>pass</p>
+            {% endif %}
+          {% endif %}
+          <hr>
+          <br>
+        {% endfor %}
       </div>
       
     </div>
